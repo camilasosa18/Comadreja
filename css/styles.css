@@ -43,7 +43,7 @@ h1,h2,h3,h4{
   color:var(--gold);
   font-weight:500;
 }
-.container{max-width:1180px;margin:0 auto;padding:0 6vw}
+.container{max-width:1180px;margin:0 auto;padding:0 clamp(20px,6vw,48px)}
 section{position:relative}
 .gold{color:var(--gold)}
 .wine{color:var(--wine-light)}
@@ -59,19 +59,19 @@ section{position:relative}
 /* nav */
 .nav{
   position:sticky;top:0;z-index:60;
-  background:rgba(19,15,10,.86);
-  backdrop-filter:blur(10px);
+  background:var(--ink);
   border-bottom:1px solid rgba(201,162,77,.18);
 }
 .nav-inner{
-  max-width:1180px;margin:0 auto;padding:0 6vw;
+  max-width:1180px;margin:0 auto;padding:0 clamp(20px,6vw,48px);
   display:flex;align-items:center;justify-content:space-between;
-  height:76px;
+  height:76px;gap:1rem;
 }
-.nav-logo img{height:38px;width:auto}
-.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-logo{flex-shrink:0}
+.nav-logo img{height:34px;width:auto;display:block}
+.nav-links{display:flex;gap:1.3rem;align-items:center}
 .nav-links a{
-  font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;
+  font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;
   color:var(--cream-2);opacity:.8;padding:.4rem 0;border-bottom:1px solid transparent;
   transition:opacity .2s,border-color .2s;
 }
@@ -83,17 +83,18 @@ section{position:relative}
   transition:background .2s,color .2s;
 }
 .nav-cta:hover{background:var(--gold);color:var(--ink)!important}
-.nav-toggle{display:none;background:none;border:0;color:var(--gold);font-size:1.6rem;cursor:pointer}
+.nav-toggle{display:none;background:none;border:0;color:var(--gold);font-size:1.6rem;cursor:pointer;flex-shrink:0}
 
-@media (max-width:860px){
+@media (max-width:1080px){
   .nav-links{
     position:fixed;inset:76px 0 0 0;background:var(--ink);
     flex-direction:column;justify-content:flex-start;padding:2.5rem 8vw;gap:1.6rem;
     transform:translateX(100%);transition:transform .3s ease;
+    overflow-y:auto;
   }
   .nav-links.open{transform:translateX(0)}
   .nav-toggle{display:block}
-  .nav-links a{font-size:1rem}
+  .nav-links a{font-size:1rem;white-space:normal}
 }
 
 /* buttons */
