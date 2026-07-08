@@ -34,4 +34,21 @@ document.addEventListener('DOMContentLoaded', function () {
     tick();
     setInterval(tick, 1000);
   }
+
+  document.querySelectorAll('.yt-facade').forEach(function (facade) {
+    function play() {
+      var id = facade.getAttribute('data-video-id');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+      iframe.title = facade.getAttribute('aria-label') || 'YouTube video';
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerated-encryption; autoplay; encrypted-media; picture-in-picture';
+      iframe.allowFullscreen = true;
+      facade.replaceWith(iframe);
+    }
+    facade.addEventListener('click', play);
+    facade.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
+    });
+  });
 });

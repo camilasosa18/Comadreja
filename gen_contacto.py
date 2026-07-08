@@ -10,7 +10,9 @@ videos = [
 video_html = ""
 for vid, label in videos:
     video_html += f"""<div>
-      <div class="video-wrap"><iframe src="https://www.youtube.com/embed/{vid}" title="{label}" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
+      <div class="video-wrap yt-facade" data-video-id="{vid}" style="background-image:url('https://img.youtube.com/vi/{vid}/hqdefault.jpg')" role="button" tabindex="0" aria-label="Reproducir: {label}">
+        <span class="yt-play">▶</span>
+      </div>
       <p class="small-caps" style="margin-top:.6rem">{label}</p>
     </div>\n"""
 
@@ -25,6 +27,19 @@ body = f"""
 </section>
 
 <section class="section">
+  <div class="container">
+    <div style="display:flex;gap:2.4rem;align-items:center;flex-wrap:wrap">
+      <img src="assets/img/organizador-rodrigo-perazolo.jpg" alt="Rodrigo Perazolo, organizador de Comadreja Salsa Congress" style="width:170px;height:170px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);box-shadow:var(--shadow)">
+      <div style="max-width:640px">
+        <span class="eyebrow">El organizador</span>
+        <h2 class="kicker-title" style="font-size:1.8rem">Rodrigo Perazolo</h2>
+        <p class="lede" style="margin-top:.6rem">Junto a su familia, Rodrigo creó Comadreja hace más de 25 años y hoy organiza cada edición del congreso: la Final Nacional de El Mundial, el Comadreja Battle Master 1vs1, los talleres, los shows y las noches sociales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-wine">
   <div class="container">
     <div class="grid grid-3">
       <div class="card">
@@ -43,13 +58,10 @@ body = f"""
         <a href="{WA_ASESOR}" class="btn btn-ghost" target="_blank" rel="noopener" style="margin-top:1rem">Más información</a>
       </div>
     </div>
-    <div class="card" style="margin-top:1.6rem;display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap">
-      <img src="assets/img/organizador-rodrigo-perazolo.jpg" alt="Rodrigo Perazolo, organizador del Battle Master 1vs1" style="width:110px;height:110px;object-fit:cover;border-radius:50%;border:1px solid rgba(201,162,77,.28)">
-      <div>
-        <h3 class="gold" style="font-size:1.1rem">Battle Master 1vs1</h3>
-        <p style="color:var(--cream-2);font-size:.92rem">Inscripción directa con Rodrigo Perazolo, organizador, 351 206 6472.</p>
-        <a href="{WA_BATTLE}" class="btn btn-ghost" target="_blank" rel="noopener" style="margin-top:1rem">Escribir a Rodrigo</a>
-      </div>
+    <div class="card" style="margin-top:1.6rem">
+      <h3 class="gold" style="font-size:1.1rem">Battle Master 1vs1</h3>
+      <p style="color:var(--cream-2);font-size:.92rem">Inscripción directa con Rodrigo Perazolo, 351 206 6472.</p>
+      <a href="{WA_BATTLE}" class="btn btn-ghost" target="_blank" rel="noopener" style="margin-top:1rem">Escribir a Rodrigo</a>
     </div>
   </div>
 </section>

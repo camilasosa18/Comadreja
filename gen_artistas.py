@@ -21,7 +21,7 @@ for img, name, flag, country, desc in featured:
 national = [
     ("assets/img/artist-julieta-enzo.jpg", "Julieta y Enzo", "🇦🇷", "Río Cuarto"),
     ("assets/img/artist-lucas-lula.jpg", "Lucas y Lula", "🇦🇷", "Córdoba"),
-    ("assets/img/artist-santiago-davor.jpg", "Santiago y Davor", "🇦🇷", "Río Cuarto"),
+    ("assets/img/artist-santiago-davor.jpg", "Santiago y Bautista", "🇦🇷", "Río Cuarto"),
     ("assets/img/artist-nacho-vega.jpg", "Nacho Vega", "🇦🇷", "Córdoba"),
     ("assets/img/artist-stephanie-lucero.jpg", "Stephanie Lucero", "🇦🇷", "Buenos Aires"),
     ("assets/img/artist-isidora-cristian.jpg", "Isidora y Cristian", "🇨🇱", "Chile"),
@@ -69,7 +69,7 @@ body = f"""
   <div class="hero-inner">
     <span class="eyebrow">+20 artistas en escena</span>
     <h1>Artistas y <span class="gold">DJs</span></h1>
-    <p class="hero-sub">Tres parejas internacionales de primer nivel encabezan una grilla de más de veinte bailarines nacionales, con música en vivo y los mejores DJs del país.</p>
+    <p class="hero-sub">Artistas de primer nivel, internacionales y nacionales, encabezan una grilla de más de veinte bailarines, con música en vivo y los mejores DJs del país.</p>
   </div>
 </section>
 
@@ -108,8 +108,8 @@ body = f"""
   <div class="container">
     <span class="eyebrow">En el escenario</span>
     <h2 class="kicker-title">Conducción</h2>
-    <p class="lede" style="margin-top:1rem">Ariel Cechel, Gaby Amor, Seba La Vega y Maxi Vergara conducen los cuatro días de Comadreja Salsa Congress.</p>
-    <img src="assets/img/group-locutores.jpg" alt="Ariel Cechel, Gaby Amor, Seba La Vega y Maxi Vergara, conducción del Comadreja Salsa Congress 2026" style="border-radius:4px;margin-top:2.2rem;max-width:520px">
+    <p class="lede" style="margin-top:1rem">Ariel Cechel, Gaby Zamora, Seba La Vega y Maxi Vergara conducen los cuatro días de Comadreja Salsa Congress.</p>
+    <img src="assets/img/group-locutores.jpg" alt="Ariel Cechel, Gaby Zamora, Seba La Vega y Maxi Vergara, conducción del Comadreja Salsa Congress 2026" style="border-radius:4px;margin-top:2.2rem;max-width:520px">
   </div>
 </section>
 
@@ -117,7 +117,7 @@ body = f"""
   <div class="container">
     <span class="eyebrow">En cabina</span>
     <h2 class="kicker-title">DJs y música en vivo</h2>
-    <p class="lede" style="margin-top:1rem">Música en vivo con <b class="gold">Ramón Vacilón</b>, y sets de los mejores DJs de salsa y bachata del país.</p>
+    <p class="lede" style="margin-top:1rem">Música en vivo, y sets de los mejores DJs de salsa y bachata del país.</p>
     <div class="grid grid-4" style="margin-top:1.6rem">
       {dj_html}
     </div>
