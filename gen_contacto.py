@@ -43,10 +43,13 @@ body = f"""
         <a href="{WA_ASESOR}" class="btn btn-ghost" target="_blank" rel="noopener" style="margin-top:1rem">Más información</a>
       </div>
     </div>
-    <div class="card" style="margin-top:1.6rem">
-      <h3 class="gold" style="font-size:1.1rem">Battle Master 1vs1</h3>
-      <p style="color:var(--cream-2);font-size:.92rem">Inscripción directa con Rodrigo Perazolo, 351 206 6472.</p>
-      <a href="{WA_BATTLE}" class="btn btn-ghost" target="_blank" rel="noopener" style="margin-top:1rem">Escribir a Rodrigo</a>
+    <div class="card" style="margin-top:1.6rem;display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap">
+      <img src="assets/img/organizador-rodrigo-perazolo.jpg" alt="Rodrigo Perazolo, organizador del Battle Master 1vs1" style="width:110px;height:110px;object-fit:cover;border-radius:50%;border:1px solid rgba(201,162,77,.28)">
+      <div>
+        <h3 class="gold" style="font-size:1.1rem">Battle Master 1vs1</h3>
+        <p style="color:var(--cream-2);font-size:.92rem">Inscripción directa con Rodrigo Perazolo, organizador, 351 206 6472.</p>
+        <a href="{WA_BATTLE}" class="btn btn-ghost" target="_blank" rel="noopener" style="margin-top:1rem">Escribir a Rodrigo</a>
+      </div>
     </div>
   </div>
 </section>

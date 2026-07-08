@@ -18,10 +18,47 @@ for img, name, flag, country, desc in featured:
       </div>
     </div>\n"""
 
-lineup = ["Ángel Rojas y Carla Martínez", "Cristian Paredes e Isadora Jacob", "Gabriela Mancini", "Stephanie Lucero",
-          "Iván y Vichy", "Fabián y Laura", "Lucas y Lula", "Aquiles Goro", "Cato Sosa", "Nacho Vega",
-          "Juan De La Cruz", "Santiago y Davor", "Aymará", "Darío Burguenes", "Julieta y Enzo", "Jorge López"]
-lineup_html = "".join(f'<span class="tag">{n}</span>' for n in lineup)
+national = [
+    ("assets/img/artist-julieta-enzo.jpg", "Julieta y Enzo", "🇦🇷", "Río Cuarto"),
+    ("assets/img/artist-lucas-lula.jpg", "Lucas y Lula", "🇦🇷", "Córdoba"),
+    ("assets/img/artist-santiago-davor.jpg", "Santiago y Davor", "🇦🇷", "Río Cuarto"),
+    ("assets/img/artist-nacho-vega.jpg", "Nacho Vega", "🇦🇷", "Córdoba"),
+    ("assets/img/artist-stephanie-lucero.jpg", "Stephanie Lucero", "🇦🇷", "Buenos Aires"),
+    ("assets/img/artist-isidora-cristian.jpg", "Isidora y Cristian", "🇨🇱", "Chile"),
+    ("assets/img/artist-ivan-silvana.jpg", "Iván y Silvana", "🇦🇷", "Córdoba"),
+    ("assets/img/artist-juan-de-la-cruz.jpg", "Juan De La Cruz", "🇦🇷", "Córdoba"),
+    ("assets/img/artist-jose-maria-onaindia.jpg", "José María Onaindia", "🇦🇷", "Tucumán"),
+    ("assets/img/artist-victoria-jorge.jpg", "Victoria y Jorge", "🇦🇷", "Córdoba"),
+    ("assets/img/artist-william-corona.jpg", "William Corona", "🇨🇱", "Chile"),
+    ("assets/img/artist-angel-carly.jpg", "Angel y Carly", "🇻🇪", "Venezuela · Chile"),
+    ("assets/img/artist-cami-blanes.jpg", "Cami Blanes", "🇦🇷", "Córdoba"),
+    ("assets/img/artist-dario-burgenes.jpg", "Darío Burgenes", "🇦🇷", "San Francisco, Córdoba"),
+    ("assets/img/artist-fabian-laura.jpg", "Fabián y Laura", "🇦🇷", "Córdoba"),
+    ("assets/img/artist-gabriela-mancini.jpg", "Gabriela Mancini", "🇦🇷", "Buenos Aires"),
+    ("assets/img/artist-guaracheros-dc.jpg", "Guaracheros DC", "🇦🇷", "Tito Pérez · Córdoba"),
+]
+national_html = ""
+for img, name, flag, place in national:
+    national_html += f"""<div class="artist">
+      <img src="{img}" alt="{name}, artista nacional invitado desde {place}">
+      <div class="artist-info">
+        <span class="flag">{flag}</span>
+        <h3>{name}</h3>
+        <p>{place}</p>
+      </div>
+    </div>\n"""
+
+companies = [
+    ("assets/img/group-mi-mambo.jpg", "Mi Mambo", "by Angel Rojas · Chile"),
+    ("assets/img/group-bailatino.jpg", "Bailatino", "Chile"),
+]
+companies_html = ""
+for img, name, place in companies:
+    companies_html += f"""<div>
+      <img src="{img}" alt="{name}, compañía invitada de {place}" style="border-radius:4px;width:100%">
+      <h3 style="margin-top:1rem" class="gold">{name}</h3>
+      <p style="color:var(--cream-2);font-size:.9rem;letter-spacing:0;text-transform:none">{place}</p>
+    </div>\n"""
 
 djs = ["DJ Moon · Buenos Aires", "DJ Tito · Córdoba", "DJ Fede Ramírez · Córdoba", "DJ Matias Casco · Tucumán", "DJ Joseco · Mendoza"]
 dj_html = "".join(f'<div class="card" style="padding:1.4rem"><h3 style="font-size:1.05rem;margin:0" class="gold">{d}</h3></div>' for d in djs)
@@ -51,8 +88,28 @@ body = f"""
     <span class="eyebrow">Y muchos más</span>
     <h2 class="kicker-title">El resto de la grilla nacional</h2>
     <p class="lede" style="margin-top:1rem">Más de 20 artistas argentinos suben al escenario de Comadreja durante los cuatro días de shows y talleres.</p>
-    <div style="margin-top:1.4rem">{lineup_html}<span class="tag">y muchos más</span></div>
-    <img src="assets/img/lineup-group.jpg" alt="Grupo completo de artistas del Comadreja Salsa Congress 2026" style="border-radius:4px;margin-top:2.2rem;max-width:520px">
+    <div class="grid grid-4" style="margin-top:2.2rem">
+      {national_html}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="eyebrow">Compañías invitadas</span>
+    <h2 class="kicker-title">Grupos de baile</h2>
+    <div class="grid grid-2" style="margin-top:2.2rem">
+      {companies_html}
+    </div>
+  </div>
+</section>
+
+<section class="section section-wine">
+  <div class="container">
+    <span class="eyebrow">En el escenario</span>
+    <h2 class="kicker-title">Conducción</h2>
+    <p class="lede" style="margin-top:1rem">Ariel Cechel, Gaby Amor, Seba La Vega y Maxi Vergara conducen los cuatro días de Comadreja Salsa Congress.</p>
+    <img src="assets/img/group-locutores.jpg" alt="Ariel Cechel, Gaby Amor, Seba La Vega y Maxi Vergara, conducción del Comadreja Salsa Congress 2026" style="border-radius:4px;margin-top:2.2rem;max-width:520px">
   </div>
 </section>
 
