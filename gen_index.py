@@ -5,7 +5,7 @@ body = f"""
   <div class="spotlights"></div>
   <div class="hero-inner">
     <span class="eyebrow">Comadreja Producciones presenta</span>
-    <h1>Comadreja <span class="gold">Salsa</span> Congress <span class="gold">2026</span></h1>
+    <h1>Comadreja <img src="assets/img/logo-salsa.png" alt="Salsa" class="h1-mark"> Congress <img src="assets/img/logo-2026.png" alt="2026" class="h1-mark h1-mark-2026"></h1>
     <p class="hero-sub">Más que historia, una experiencia. El congreso mundial de salsa y bachata más esperado del año en Córdoba: artistas internacionales, competencias, talleres, shows y pura energía latina.</p>
     <div class="btn-row">
       <a href="{WA_FULLPASS}" class="btn btn-solid" target="_blank" rel="noopener">Quiero el Full Pass</a>
