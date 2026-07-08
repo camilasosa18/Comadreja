@@ -23,7 +23,7 @@ lineup = ["Ángel Rojas y Carla Martínez", "Cristian Paredes e Isadora Jacob", 
           "Juan De La Cruz", "Santiago y Davor", "Aymará", "Darío Burguenes", "Julieta y Enzo", "Jorge López"]
 lineup_html = "".join(f'<span class="tag">{n}</span>' for n in lineup)
 
-djs = ["DJ Moon · Buenos Aires", "DJ Tito · Córdoba", "DJ Fede Ramírez · Córdoba", "DJ Mate Casco · Tucumán", "DJ Joseco · Mendoza"]
+djs = ["DJ Moon · Buenos Aires", "DJ Tito · Córdoba", "DJ Fede Ramírez · Córdoba", "DJ Matias Casco · Tucumán", "DJ Joseco · Mendoza"]
 dj_html = "".join(f'<div class="card" style="padding:1.4rem"><h3 style="font-size:1.05rem;margin:0" class="gold">{d}</h3></div>' for d in djs)
 
 body = f"""
@@ -64,6 +64,7 @@ body = f"""
     <div class="grid grid-4" style="margin-top:1.6rem">
       {dj_html}
     </div>
+    <img src="assets/img/dj-lineup.jpg" alt="DJ Joseco, DJ Fede Ramírez, DJ Moon, DJ Tito y DJ Matias Casco en cabina" style="border-radius:4px;margin-top:2.2rem;max-width:520px">
     <div class="btn-row" style="margin-top:2.2rem">
       <a href="{WA_FULLPASS}" class="btn btn-solid" target="_blank" rel="noopener">Quiero mi Full Pass</a>
       <a href="talleres.html" class="btn btn-ghost">Ver talleres con estos artistas</a>
