@@ -95,6 +95,7 @@ body = f"""
 </section>
 
 <section class="section">
+  <img src="assets/img/decor/decor-09.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">Compañías invitadas</span>
     <h2 class="kicker-title">Grupos de baile</h2>
@@ -105,6 +106,7 @@ body = f"""
 </section>
 
 <section class="section section-wine">
+  <img src="assets/img/decor/decor-10.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">En el escenario</span>
     <h2 class="kicker-title">Conducción</h2>
@@ -114,6 +116,7 @@ body = f"""
 </section>
 
 <section class="section">
+  <img src="assets/img/decor/decor-08.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">En cabina</span>
     <h2 class="kicker-title">DJs y música en vivo</h2>

@@ -54,7 +54,7 @@ b,strong{font-weight:700}
   color:var(--gold);
   font-weight:500;
 }
-.container{max-width:1180px;margin:0 auto;padding:0 clamp(20px,6vw,48px)}
+.container{max-width:1180px;margin:0 auto;padding:0 clamp(20px,6vw,48px);position:relative;z-index:1}
 section{position:relative}
 .gold{color:var(--gold)}
 .wine{color:var(--wine-light)}
@@ -155,6 +155,19 @@ section{position:relative}
 }
 .spotlights::before{left:2%;transform:rotate(8deg)}
 .spotlights::after{right:2%;transform:rotate(-8deg)}
+
+/* decorative figures */
+.section{overflow:hidden}
+.decor-figure{
+  position:absolute;bottom:0;z-index:0;pointer-events:none;
+  height:104%;width:auto;max-width:none;
+  opacity:.85;filter:drop-shadow(0 25px 45px rgba(0,0,0,.55));
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%);
+}
+.decor-figure.decor-left{left:-1.5vw}
+.decor-figure.decor-right{right:-1.5vw}
+@media (max-width:1150px){.decor-figure{display:none}}
 
 /* sections */
 .section{padding:6.5rem 0}

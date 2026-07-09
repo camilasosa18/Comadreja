@@ -47,6 +47,7 @@ body = f"""
 </section>
 
 <section class="section">
+  <img src="assets/img/decor/decor-06.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">Cómo se compite</span>
     <h2 class="kicker-title">Cinco etapas hasta coronar a los mejores del mundo</h2>
@@ -76,6 +77,7 @@ body = f"""
 </section>
 
 <section class="section section-wine">
+  <img src="assets/img/decor/decor-03.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">Categorías</span>
     <h2 class="kicker-title">Un lugar para cada bailarín</h2>

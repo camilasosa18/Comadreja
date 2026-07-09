@@ -26,6 +26,7 @@ body = f"""
 </section>
 
 <section class="section">
+  <img src="assets/img/decor/decor-01.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">La cuenta regresiva</span>
     <h2 class="kicker-title">Faltan menos días de lo que pensás</h2>
@@ -92,6 +93,7 @@ body = f"""
 </section>
 
 <section class="section">
+  <img src="assets/img/decor/decor-07.png" alt="" class="decor-figure decor-left">
   <div class="container">
     <span class="eyebrow">Full Pass</span>
     <h2 class="kicker-title">Todo el congreso, un solo acceso</h2>
