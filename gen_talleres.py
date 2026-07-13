@@ -11,7 +11,6 @@ body = f"""
 </section>
 
 <section class="section">
-  <img src="assets/img/decor/decor-12.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">Del 26 al 29 de noviembre</span>
     <h2 class="kicker-title">Día por día</h2>

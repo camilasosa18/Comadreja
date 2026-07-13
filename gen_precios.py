@@ -66,7 +66,6 @@ body = f"""
 </section>
 
 <section class="section">
-  <img src="assets/img/decor/decor-04.png" alt="" class="decor-figure decor-left">
   <div class="container">
     <span class="eyebrow">Cómo pagar</span>
     <h2 class="kicker-title">Formas de pago</h2>

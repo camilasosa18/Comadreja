@@ -5,13 +5,7 @@ body = f"""
   <div class="spotlights"></div>
   <div class="hero-inner">
     <span class="eyebrow">Comadreja Producciones presenta</span>
-    <h1 class="h1-logo">
-      <span class="sr-only">Comadreja Salsa Congress 2026</span>
-      <img src="assets/img/logo-comadreja.png" alt="" class="h1-mark h1-mark-comadreja">
-      <img src="assets/img/logo-salsa.png" alt="" class="h1-mark h1-mark-salsa">
-      <img src="assets/img/logo-congress.png" alt="" class="h1-mark h1-mark-congress">
-      <img src="assets/img/logo-2026.png" alt="" class="h1-mark h1-mark-2026">
-    </h1>
+    <h1>Comadreja <span class="gold">Salsa</span> Congress <span class="gold">2026</span></h1>
     <p class="hero-sub">Más que historia, una experiencia. El congreso mundial de salsa y bachata más esperado del año en Córdoba: artistas internacionales, competencias, talleres, shows y pura energía latina.</p>
     <div class="btn-row">
       <a href="{WA_FULLPASS}" class="btn btn-solid" target="_blank" rel="noopener">Quiero el Full Pass</a>
@@ -26,7 +20,6 @@ body = f"""
 </section>
 
 <section class="section">
-  <img src="assets/img/decor/decor-01.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">La cuenta regresiva</span>
     <h2 class="kicker-title">Faltan menos días de lo que pensás</h2>
@@ -83,7 +76,7 @@ body = f"""
     <div class="split">
       <div>
         <span class="eyebrow">Artistas internacionales</span>
-        <h2 class="kicker-title">Tres parejas de primer nivel mundial</h2>
+        <h2 class="kicker-title">Parejas internacionales de primer nivel y artistas de toda la Argentina presentes</h2>
         <p class="lede">Karen y Ricardo (Chile), Carine y Rafael (Brasil) y Anthony y Belén (España) encabezan una grilla de más de 20 artistas nacionales e internacionales.</p>
         <a href="artistas.html" class="btn btn-wine" style="margin-top:1.4rem">Conocer a todos los artistas</a>
       </div>
@@ -93,7 +86,6 @@ body = f"""
 </section>
 
 <section class="section">
-  <img src="assets/img/decor/decor-07.png" alt="" class="decor-figure decor-left">
   <div class="container">
     <span class="eyebrow">Full Pass</span>
     <h2 class="kicker-title">Todo el congreso, un solo acceso</h2>

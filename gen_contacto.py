@@ -27,7 +27,6 @@ body = f"""
 </section>
 
 <section class="section">
-  <img src="assets/img/decor/decor-11.jpg" alt="" class="decor-figure decor-right">
   <div class="container">
     <div style="display:flex;gap:2.4rem;align-items:center;flex-wrap:wrap">
       <img src="assets/img/organizador-rodrigo-perazolo.jpg" alt="Rodrigo Perazolo, organizador de Comadreja Salsa Congress" style="width:170px;height:170px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);box-shadow:var(--shadow)">
@@ -68,7 +67,6 @@ body = f"""
 </section>
 
 <section class="section section-wine">
-  <img src="assets/img/decor/decor-05.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">Seguinos</span>
     <h2 class="kicker-title" style="font-size:1.8rem">Instagram oficial</h2>

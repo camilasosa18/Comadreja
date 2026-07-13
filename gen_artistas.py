@@ -1,8 +1,8 @@
 from build import page, write, WA_FULLPASS
 
 featured = [
-    ("assets/img/artist-karen-ricardo.jpg", "Karen y Ricardo", "🇨🇱", "Chile", "9 veces campeones mundiales de salsa, creadores y organizadores de la competencia El Mundial."),
     ("assets/img/artist-carine-rafael.jpg", "Carine y Rafael", "🇧🇷", "Brasil", "Reconocidos mundialmente en la salsa, referentes de estilo y técnica."),
+    ("assets/img/artist-karen-ricardo.jpg", "Karen y Ricardo", "🇨🇱", "Chile", "9 veces campeones mundiales de salsa, creadores y organizadores de la competencia El Mundial."),
     ("assets/img/artist-antoni-belen.jpg", "Anthony y Belén", "🇪🇸", "España", "Reconocidos mundialmente en la bachata y su técnica."),
 ]
 
@@ -40,7 +40,7 @@ national = [
 national_html = ""
 for img, name, flag, place in national:
     national_html += f"""<div class="artist">
-      <img src="{img}" alt="{name}, artista nacional invitado desde {place}">
+      <img src="{img}" alt="{name}, artista invitado desde {place}">
       <div class="artist-info">
         <span class="flag">{flag}</span>
         <h3>{name}</h3>
@@ -75,7 +75,6 @@ body = f"""
 
 <section class="section">
   <div class="container">
-    <span class="eyebrow">Cabezas de cartel</span>
     <h2 class="kicker-title">Artistas internacionales</h2>
     <div class="grid grid-3" style="margin-top:2.2rem">
       {feat_html}
@@ -86,8 +85,8 @@ body = f"""
 <section class="section section-wine">
   <div class="container">
     <span class="eyebrow">Y muchos más</span>
-    <h2 class="kicker-title">El resto de la grilla nacional</h2>
-    <p class="lede" style="margin-top:1rem">Más de 20 artistas argentinos suben al escenario de Comadreja durante los cuatro días de shows y talleres.</p>
+    <h2 class="kicker-title">El resto de la grilla</h2>
+    <p class="lede" style="margin-top:1rem">Más de 20 artistas suben al escenario de Comadreja durante los cuatro días de shows y talleres.</p>
     <div class="grid grid-4" style="margin-top:2.2rem">
       {national_html}
     </div>
@@ -95,7 +94,6 @@ body = f"""
 </section>
 
 <section class="section">
-  <img src="assets/img/decor/decor-09.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">Compañías invitadas</span>
     <h2 class="kicker-title">Grupos de baile</h2>
@@ -106,7 +104,6 @@ body = f"""
 </section>
 
 <section class="section section-wine">
-  <img src="assets/img/decor/decor-10.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">En el escenario</span>
     <h2 class="kicker-title">Conducción</h2>
@@ -116,7 +113,6 @@ body = f"""
 </section>
 
 <section class="section">
-  <img src="assets/img/decor/decor-08.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">En cabina</span>
     <h2 class="kicker-title">DJs y música en vivo</h2>
@@ -135,7 +131,7 @@ body = f"""
 
 write("artistas.html", page(
     "Artistas y DJs | Comadreja Salsa Congress 2026",
-    "Karen y Ricardo, Carine y Rafael, Anthony y Belén, y más de 20 artistas nacionales. DJs y música en vivo en el Comadreja Salsa Congress 2026.",
+    "Karen y Ricardo, Carine y Rafael, Anthony y Belén, y más de 20 artistas invitados. DJs y música en vivo en el Comadreja Salsa Congress 2026.",
     "artistas.html",
     body
 ))

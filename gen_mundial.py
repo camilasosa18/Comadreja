@@ -1,20 +1,19 @@
 from build import page, write, WA_MUNDIAL_INFO, WA_ASESOR
 
 sedes = [
-    ("05 ago", "Jujuy", "yujuy_producciones"),
-    ("15 ago", "La Pampa", "micaytincho_tym"),
-    ("05 sep", "San Juan", "ndc_productora"),
-    ("12 sep", "Santa Fe", "elite.danceclub"),
-    ("26 sep", "Buenos Aires", "GabyMancini_"),
-    ("26 sep", "Santiago del Estero", "Deryk712"),
-    ("03 oct", "Salta", "elmundial.saltaarg"),
-    ("10 oct", "Mendoza", "EduBoschi"),
-    ("17 oct", "Formosa", "IvanLarRosaOK"),
-    ("19 oct", "Neuquén", "Gonza_Gonzalez2016"),
-    ("24 oct", "San Luis", "ArcenioPrimo"),
-    ("31 oct", "Mar del Plata", "elmundial.mdp.arg"),
-    ("01 nov", "Córdoba · Final Nacional", "ComadrejaProducciones"),
-    ("A confirmar", "Tucumán", "PalladiumTuc"),
+    ("Mié 5 ago", "Jujuy", "yujuy_producciones"),
+    ("Sáb 15 ago", "La Pampa", "micaytincho_tym"),
+    ("Sáb 5 sep", "San Juan", "ndc_productora"),
+    ("Sáb 19 sep", "Neuquén", "Gonza_Gonzalez2016"),
+    ("Sáb 26 sep", "Buenos Aires", "GabyMancini_"),
+    ("Sáb 26 sep", "Santiago del Estero", "Deryk712"),
+    ("Sáb 3 oct", "Tucumán", "PalladiumTuc"),
+    ("Sáb 10 oct", "Mendoza", "EduBoschi"),
+    ("Sáb 17 oct", "Formosa", "IvanLarRosaOK"),
+    ("Sáb 24 oct", "San Luis", "ArcenioPrimo"),
+    ("Sáb 24 oct", "Santa Fe", "elite.danceclub"),
+    ("Sáb 31 oct", "Mar del Plata", "elmundial.mdp.arg"),
+    ("Dom 1° nov", "Córdoba · Final Nacional", "ComadrejaProducciones"),
 ]
 
 sede_html = ""
@@ -47,7 +46,6 @@ body = f"""
 </section>
 
 <section class="section">
-  <img src="assets/img/decor/decor-06.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">Cómo se compite</span>
     <h2 class="kicker-title">Cinco etapas hasta coronar a los mejores del mundo</h2>
@@ -77,7 +75,6 @@ body = f"""
 </section>
 
 <section class="section section-wine">
-  <img src="assets/img/decor/decor-03.png" alt="" class="decor-figure decor-right">
   <div class="container">
     <span class="eyebrow">Categorías</span>
     <h2 class="kicker-title">Un lugar para cada bailarín</h2>

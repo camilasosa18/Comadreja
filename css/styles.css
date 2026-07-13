@@ -98,7 +98,8 @@ section{position:relative}
 
 @media (max-width:1080px){
   .nav-links{
-    position:fixed;inset:76px 0 0 0;background:var(--ink);
+    position:fixed;inset:76px 0 0 0;
+    background:linear-gradient(160deg,var(--ink) 0%,#241c10 55%,var(--ink) 100%);
     flex-direction:column;justify-content:flex-start;padding:2.5rem 8vw;gap:1.6rem;
     transform:translateX(100%);transition:transform .3s ease;
     overflow-y:auto;
@@ -161,7 +162,7 @@ section{position:relative}
 .decor-figure{
   position:absolute;bottom:0;z-index:0;pointer-events:none;
   height:104%;width:auto;max-width:none;
-  opacity:.85;filter:drop-shadow(0 25px 45px rgba(0,0,0,.55));
+  opacity:.9;filter:drop-shadow(0 0 34px rgba(201,162,77,.5)) drop-shadow(0 22px 38px rgba(0,0,0,.55));
   -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%);
   mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 88%,transparent 100%);
 }
@@ -186,6 +187,8 @@ section{position:relative}
 .kicker-title{font-size:clamp(1.9rem,4vw,3rem);max-width:720px}
 .lede{max-width:640px;color:var(--cream-2);font-size:1.02rem}
 .section-cream .lede{color:#4a4030}
+.section-cream .amount{color:#2B2416}
+.section-cream .price-list li{color:#4a4030}
 
 /* cards */
 .card{
@@ -237,7 +240,7 @@ section{position:relative}
 .workshop-list{list-style:none;margin:0;padding:0}
 .workshop-list li{padding:.9rem 0;border-bottom:1px solid rgba(201,162,77,.14);font-size:.96rem;color:var(--cream-2);display:flex;gap:1rem;align-items:center}
 .workshop-list b{color:var(--cream);font-weight:500}
-.workshop-list img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid rgba(201,162,77,.35)}
+.workshop-list img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 12%;flex-shrink:0;border:1px solid rgba(201,162,77,.35)}
 .workshop-list a{color:var(--gold-light);white-space:nowrap}
 .workshop-list a:hover{color:var(--gold)}
 
