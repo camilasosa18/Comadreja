@@ -41,7 +41,7 @@ body = f"""
   </div>
 </section>
 
-<section class="section section-wine">
+<section class="section section-wine" id="social">
   <div class="container">
     <span class="eyebrow">Solo por una noche</span>
     <h2 class="kicker-title">Entradas a las noches de social</h2>

@@ -51,7 +51,7 @@ body = f"""
   <div class="container">
     <span class="eyebrow">Qué vas a vivir</span>
     <h2 class="kicker-title">Cuatro días, dos competencias, una sola experiencia</h2>
-    <div class="grid grid-3" style="margin-top:2.5rem">
+    <div class="grid grid-4" style="margin-top:2.5rem">
       <div class="card">
         <h3 class="gold">El Mundial</h3>
         <p style="color:var(--cream-2);font-size:.95rem">Final nacional argentina de la competencia creada por Karen y Ricardo, 9 veces campeones mundiales. Jueves y viernes.</p>
@@ -66,6 +66,11 @@ body = f"""
         <h3 class="gold">Talleres y shows</h3>
         <p style="color:var(--cream-2);font-size:.95rem">Clases con Karen y Ricardo, Carine y Rafael, Anthony y Belén y más de 20 artistas. Shows, banda en vivo y social todas las noches.</p>
         <a href="talleres.html" class="btn btn-ghost" style="margin-top:1rem">Ver cronograma</a>
+      </div>
+      <div class="card">
+        <h3 class="gold">Solo Social</h3>
+        <p style="color:var(--cream-2);font-size:.95rem">50% bachata y 50% salsa para bailar toda la noche, con DJs y música en vivo. Entrada suelta viernes, sábado o domingo.</p>
+        <a href="precios.html#social" class="btn btn-ghost" style="margin-top:1rem">Ver entradas a la social</a>
       </div>
     </div>
   </div>

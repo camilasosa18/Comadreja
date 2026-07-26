@@ -55,7 +55,7 @@ b,strong{font-weight:700}
   font-weight:500;
 }
 .container{max-width:1180px;margin:0 auto;padding:0 clamp(20px,6vw,48px);position:relative;z-index:1}
-section{position:relative}
+section{position:relative;scroll-margin-top:80px}
 .gold{color:var(--gold)}
 .wine{color:var(--wine-light)}
 
@@ -127,7 +127,7 @@ section{position:relative}
 /* hero */
 .hero{
   min-height:100vh;display:flex;align-items:flex-end;
-  background-size:cover;background-position:center 20%;position:relative;
+  background-size:cover;background-position:center top;position:relative;
   padding:8rem 0 5rem;
 }
 .hero::before{
