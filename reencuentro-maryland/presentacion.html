@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Reencuentro Egresados Maryland</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #0a1230;
+    --night-2: #121d4a;
+    --maryland: #1f2f8f;
+    --gold: #e9c47c;
+    --gold-soft: #f6dfae;
+    --cream: #fff7e6;
+    --muted: #c4cbe6;
+    --red: #d8282e;
+    --card: #16215a;
+    --line: rgba(233, 196, 124, 0.45);
+  }
+  @page { size: 1920px 1080px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--night); }
+  body { font-family: "Montserrat", sans-serif; color: var(--cream); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  .slide {
+    position: relative; width: 1920px; height: 1080px; overflow: hidden;
+    background: radial-gradient(ellipse at 50% 120%, #1c2b78 0%, var(--night-2) 45%, var(--night) 100%);
+    padding: 120px 130px 90px; page-break-after: always; break-after: page;
+  }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+  .sky, .garland { position: absolute; left: 0; top: 0; width: 100%; pointer-events: none; }
+  .sky { height: 100%; }
+  .garland { height: 140px; }
+  .content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; }
+
+  .kicker { font-size: 22px; letter-spacing: 8px; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+  h1 { font-family: "Playfair Display", serif; font-weight: 700; font-size: 74px; line-height: 1.05; margin-top: 14px; }
+  h2 { font-family: "Playfair Display", serif; font-weight: 700; font-size: 38px; color: var(--gold-soft); }
+  .script { font-family: "Great Vibes", cursive; color: var(--gold); font-weight: 400; }
+  .lead { font-size: 26px; color: var(--muted); margin-top: 18px; line-height: 1.45; max-width: 1350px; }
+  .num { position: absolute; right: 70px; bottom: 44px; font-size: 18px; letter-spacing: 4px; color: var(--muted); z-index: 3; }
+  .brand { position: absolute; left: 130px; bottom: 44px; font-size: 18px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; z-index: 3; }
+
+  /* Portada */
+  .cover { padding: 0; background: var(--night); }
+  .cover .photo { position: absolute; inset: 0; background: url("img/arbol-estrellas.jpg") center 30% / cover no-repeat; }
+  .cover .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,18,48,0.96) 0%, rgba(10,18,48,0.82) 42%, rgba(10,18,48,0.15) 80%); }
+  .cover .content { padding: 150px 130px; justify-content: center; }
+  .cover h1 { font-size: 112px; letter-spacing: 1px; }
+  .cover .script { font-size: 104px; line-height: 1; margin-top: 8px; }
+  .cover .tag { margin-top: 40px; font-size: 26px; letter-spacing: 10px; text-transform: uppercase; color: var(--cream); }
+  .cover .date { margin-top: 56px; display: flex; gap: 0; align-items: stretch; border-top: 2px solid var(--line); border-bottom: 2px solid var(--line); width: 720px; }
+  .cover .date div { flex: 1; padding: 22px 0; text-align: center; }
+  .cover .date div + div { border-left: 2px solid var(--line); }
+  .cover .date b { display: block; font-family: "Playfair Display", serif; font-size: 64px; color: var(--gold-soft); }
+  .cover .date span { font-size: 20px; letter-spacing: 6px; text-transform: uppercase; color: var(--muted); }
+
+  /* Resumen */
+  .split { display: grid; grid-template-columns: 1fr 760px; gap: 80px; flex: 1; margin-top: 50px; }
+  .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-content: start; }
+  .fact { background: var(--card); border: 1.5px solid var(--line); border-radius: 22px; padding: 28px 30px; }
+  .fact b { display: block; font-family: "Playfair Display", serif; font-size: 52px; color: var(--gold-soft); line-height: 1.1; }
+  .fact span { font-size: 23px; color: var(--muted); line-height: 1.4; display: block; margin-top: 6px; }
+  .framed { border-radius: 26px; overflow: hidden; border: 2px solid var(--line); background: center / cover no-repeat; }
+
+  /* Concepto */
+  .swatches { display: flex; gap: 26px; margin-top: 20px; }
+  .sw { width: 190px; }
+  .sw i { display: block; height: 120px; border-radius: 18px; border: 1.5px solid rgba(255,255,255,0.2); }
+  .sw b { display: block; margin-top: 12px; font-size: 20px; }
+  .sw span { font-size: 17px; color: var(--muted); }
+  .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 46px; }
+  .card { background: var(--card); border: 1.5px solid var(--line); border-radius: 22px; padding: 30px 34px; }
+  .card h3 { font-family: "Playfair Display", serif; font-size: 30px; color: var(--gold-soft); margin-bottom: 14px; }
+  .card p, .card li { font-size: 24px; line-height: 1.5; color: var(--cream); }
+  .card ul { list-style: none; }
+  .card li { padding-left: 30px; position: relative; margin-bottom: 6px; }
+  .card li::before { content: "★"; position: absolute; left: 0; top: 0; color: var(--gold); font-size: 18px; }
+
+  /* Recorrido */
+  .route { position: relative; margin-top: 70px; flex: 1; }
+  .route svg.path { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .stop { position: absolute; width: 330px; text-align: center; }
+  .stop .badge { width: 96px; height: 96px; margin: 0 auto 14px; position: relative; }
+  .stop .badge b { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-top: 10px; font-family: "Playfair Display", serif; font-size: 30px; color: var(--night); }
+  .stop h4 { font-family: "Playfair Display", serif; font-size: 28px; color: var(--gold-soft); }
+  .stop p { font-size: 21px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+  /* Ideas (2 por slide) */
+  .ideas { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 44px; flex: 1; }
+  .idea { background: var(--card); border: 1.5px solid var(--line); border-radius: 26px; padding: 40px 44px; display: flex; flex-direction: column; }
+  .idea .head { display: flex; align-items: center; gap: 22px; }
+  .idea .n { flex: none; width: 74px; height: 74px; position: relative; }
+  .idea .n b { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-top: 8px; font-family: "Playfair Display", serif; font-size: 24px; color: var(--night); }
+  .idea h3 { font-family: "Playfair Display", serif; font-size: 40px; color: var(--gold-soft); line-height: 1.1; }
+  .idea .what { font-size: 27px; line-height: 1.45; margin: 22px 0 18px; color: var(--cream); }
+  .idea .lbl { font-size: 19px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
+  .idea ul { list-style: none; }
+  .idea li { font-size: 25px; line-height: 1.45; color: var(--cream); padding-left: 30px; position: relative; margin-bottom: 7px; }
+  .idea li::before { content: "★"; position: absolute; left: 0; color: var(--gold); font-size: 17px; top: 2px; }
+  .idea .tip { margin-top: auto; padding-top: 18px; border-top: 1.5px dashed var(--line); font-size: 23px; color: var(--gold-soft); line-height: 1.45; }
+  .idea .tip b { color: var(--gold); }
+
+  /* Nuevas ideas */
+  .grid6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; }
+  .mini { background: var(--card); border: 1.5px solid var(--line); border-radius: 22px; padding: 30px 34px; }
+  .mini .icon { font-size: 48px; line-height: 1; }
+  .mini h3 { font-family: "Playfair Display", serif; font-size: 34px; color: var(--gold-soft); margin: 14px 0 10px; }
+  .mini p { font-size: 22.5px; line-height: 1.5; color: var(--cream); }
+  .mini .when { margin-top: 14px; font-size: 18px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+
+  /* Cronograma */
+  .timeline { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 70px; }
+  .tl { display: grid; grid-template-columns: 150px 34px 1fr; align-items: start; padding: 10px 0; border-bottom: 1px solid rgba(233,196,124,0.2); }
+  .tl .h { font-family: "Playfair Display", serif; font-size: 38px; color: var(--gold-soft); line-height: 1.1; }
+  .tl .dot { color: var(--gold); font-size: 22px; padding-top: 8px; }
+  .tl b { display: block; font-size: 26px; color: var(--cream); }
+  .tl span { display: block; font-size: 19.5px; color: var(--muted); line-height: 1.4; margin-top: 3px; }
+  .tl.key .h, .tl.key b { color: var(--gold); }
+  .note { margin-top: 24px; font-size: 18px; color: var(--muted); font-style: italic; }
+
+  /* Preparativos */
+  .weeks { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-top: 50px; }
+  .week { background: var(--card); border: 1.5px solid var(--line); border-radius: 22px; padding: 32px 28px; min-height: 640px; }
+  .week .d { font-family: "Playfair Display", serif; font-size: 34px; color: var(--gold-soft); }
+  .week .t { font-size: 17px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin: 6px 0 16px; }
+  .week li { font-size: 22.5px; line-height: 1.45; list-style: none; padding-left: 26px; position: relative; margin-bottom: 8px; }
+  .week li::before { content: "☐"; position: absolute; left: 0; color: var(--gold); }
+  .week.final { background: #2a2f5a; }
+
+  /* Materiales */
+  .mat { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 32px; align-items: start; }
+  .mat .card { padding: 26px 30px; }
+  .mat .card h3 { font-size: 32px; margin-bottom: 12px; }
+  .mat table { width: 100%; border-collapse: collapse; }
+  .mat td { font-size: 20px; line-height: 1.3; padding: 7px 0; border-bottom: 1px solid rgba(233,196,124,0.18); vertical-align: top; }
+  .mat td:first-child { padding-right: 10px; }
+  .mat td:first-child::before { content: "☐ "; color: var(--gold); }
+  .mat td.q { text-align: right; color: var(--gold-soft); white-space: nowrap; font-weight: 600; }
+
+  /* Comisiones */
+  .teams { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 46px; }
+
+  /* Cierre */
+  .end .content { align-items: center; justify-content: center; text-align: center; }
+  .end .script { font-size: 150px; line-height: 1; }
+  .end h1 { font-size: 64px; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<!-- 1 · PORTADA -->
+<section class="slide cover">
+  <div class="photo"></div><div class="shade"></div>
+  <svg class="sky" data-stars="40" data-seed="1" data-left="0.55"></svg>
+  <div class="content">
+    <div class="kicker">Unidad Educativa Maryland · 13 promociones</div>
+    <h1>Reencuentro<br>de Egresados</h1>
+    <div class="script">Maryland</div>
+    <div class="tag">Caminos distintos, la misma raíz</div>
+    <div class="date">
+      <div><b>13/11</b><span>Viernes</span></div>
+      <div><b>19:00</b><span>Horas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · EL EVENTO -->
+<section class="slide">
+  <svg class="sky" data-stars="70" data-seed="2"></svg>
+  <svg class="garland" data-seed="2"></svg>
+  <div class="content">
+    <div class="kicker">El evento</div>
+    <h1>Volver un rato más <span class="script" style="font-size:96px">al cole</span></h1>
+    <div class="split">
+      <div class="facts">
+        <div class="fact"><b>13</b><span>promociones de egresados invitadas a reencontrarse en la escuela</span></div>
+        <div class="fact"><b>13/11 · 19 h</b><span>viernes por la noche, en el edificio del Maryland</span></div>
+        <div class="fact"><b>Pizzas</b><span>catering de pizzas, bebidas y barra de tragos</span></div>
+        <div class="fact"><b>6 aulas</b><span>con pantallas pasando fotos viejas de cada promoción</span></div>
+        <div class="fact" style="grid-column: span 2"><b>Confirmación hasta el 23/10</b><span>con la lista de confirmados se cierran cantidades de catering, mesas, centros y materiales</span></div>
+      </div>
+      <div class="framed" style="background-image:url('img/escuela.jpg')"></div>
+    </div>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">02</div>
+</section>
+
+<!-- 3 · CONCEPTO -->
+<section class="slide">
+  <svg class="sky" data-stars="80" data-seed="3"></svg>
+  <svg class="garland" data-seed="3"></svg>
+  <div class="content">
+    <div class="kicker">Concepto estético</div>
+    <h1>Una noche de <span class="script" style="font-size:100px">estrellas y luces</span></h1>
+    <p class="lead">Cada egresado es una estrella que vuelve al mismo cielo. Luces cálidas, estrellas colgantes, madera, ramas y frascos de vidrio: un clima íntimo y nostálgico, con los colores del Maryland como detalle.</p>
+    <div class="swatches">
+      <div class="sw"><i style="background:#0a1230"></i><b>Azul noche</b><br><span>#0A1230 · fondos</span></div>
+      <div class="sw"><i style="background:#1f2f8f"></i><b>Azul Maryland</b><br><span>#1F2F8F · telas</span></div>
+      <div class="sw"><i style="background:#e9c47c"></i><b>Dorado cálido</b><br><span>#E9C47C · luces</span></div>
+      <div class="sw"><i style="background:#fff7e6"></i><b>Blanco crema</b><br><span>#FFF7E6 · papel</span></div>
+      <div class="sw"><i style="background:#d8282e"></i><b>Rojo escudo</b><br><span>#D8282E · detalles</span></div>
+      <div class="sw"><i style="background:#a77b4f"></i><b>Madera / kraft</b><br><span>#A77B4F · natural</span></div>
+    </div>
+    <div class="three">
+      <div class="card"><h3>Luces</h3><ul><li>Guirnaldas de luz cálida (nunca fría)</li><li>Velas LED en bolsitas y frascos</li><li>Estrellas colgantes en árboles y techos</li></ul></div>
+      <div class="card"><h3>Texturas</h3><ul><li>Ramas secas, yute y arpillera</li><li>Tela azul noche y tul dorado</li><li>Fotos tipo polaroid con broches</li></ul></div>
+      <div class="card"><h3>Tipografías</h3><ul><li><b>Playfair Display</b> para títulos</li><li><span class="script" style="font-size:30px">Great Vibes</span> para detalles</li><li>Montserrat para textos y carteles</li></ul></div>
+    </div>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">03</div>
+</section>
+
+<!-- 4 · RECORRIDO -->
+<section class="slide">
+  <svg class="sky" data-stars="70" data-seed="4"></svg>
+  <svg class="garland" data-seed="4"></svg>
+  <div class="content">
+    <div class="kicker">Mapa de la noche</div>
+    <h1>El recorrido por la escuela</h1>
+    <p class="lead">Un camino de luces que guía a los egresados por cada sector, de la puerta al patio.</p>
+    <div class="route">
+      <svg class="path" viewBox="0 0 1660 640" preserveAspectRatio="none">
+        <path d="M 165 110 C 420 110, 420 110, 580 110 S 900 110, 1080 110 S 1400 110, 1500 110 C 1650 110, 1650 430, 1500 430 S 1250 430, 1080 430 S 750 430, 580 430 S 300 430, 165 430" fill="none" stroke="#e9c47c" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round" opacity="0.8"/>
+      </svg>
+      <div class="stop" style="left:0;top:40px"><div class="badge" data-star><b>1</b></div><h4>Pasillo estrellado</h4><p>Entrada con bolsitas de luz y acreditación</p></div>
+      <div class="stop" style="left:415px;top:40px"><div class="badge" data-star><b>2</b></div><h4>Fotos Memories</h4><p>Muro de fotos de las 13 promos</p></div>
+      <div class="stop" style="left:915px;top:40px"><div class="badge" data-star><b>3</b></div><h4>Antes y hoy</h4><p>Uniformes de ayer y de hoy</p></div>
+      <div class="stop" style="left:1335px;top:40px"><div class="badge" data-star><b>4</b></div><h4>Sector Rama</h4><p>Árbol de recuerdos escritos</p></div>
+      <div class="stop" style="left:1335px;top:360px"><div class="badge" data-star><b>5</b></div><h4>Las 6 aulas</h4><p>Pantallas con fotos viejas por promo</p></div>
+      <div class="stop" style="left:915px;top:360px"><div class="badge" data-star><b>6</b></div><h4>Juegos</h4><p>Memo test, photo booth y mapa</p></div>
+      <div class="stop" style="left:415px;top:360px"><div class="badge" data-star><b>7</b></div><h4>Patio y mesas</h4><p>Pizzas, centros de mesa y barra</p></div>
+      <div class="stop" style="left:0;top:360px"><div class="badge" data-star><b>8</b></div><h4>Escenario</h4><p>Videos, brindis y foto final</p></div>
+    </div>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">04</div>
+</section>
+
+<!-- 5 · IDEAS 1-2 -->
+<section class="slide">
+  <svg class="sky" data-stars="60" data-seed="5"></svg>
+  <svg class="garland" data-seed="5"></svg>
+  <div class="content">
+    <div class="kicker">Las ideas · 1 y 2</div>
+    <h1>Recuerdos para mirar</h1>
+    <div class="ideas">
+      <div class="idea">
+        <div class="head"><div class="n" data-star><b>1</b></div><h3>Fotos Memories</h3></div>
+        <p class="what">Un muro con fotos variadas de todos los egresados, colgadas con broches sobre tiras de luces cálidas.</p>
+        <div class="lbl">Cómo armarlo</div>
+        <ul>
+          <li>Pedir fotos por WhatsApp o carpeta de Drive (cierre 2/11) e imprimirlas tipo polaroid.</li>
+          <li>Una columna por promoción, con cartel del año arriba.</li>
+          <li>Fondo de tela azul noche + cortina de luces.</li>
+          <li>Marcadores para escribir nombres debajo de cada foto.</li>
+        </ul>
+        <p class="tip"><b>Tip:</b> dejar broches libres para sumar las fotos que se saquen esa noche.</p>
+      </div>
+      <div class="idea">
+        <div class="head"><div class="n" data-star><b>2</b></div><h3>Antes y hoy: los uniformes</h3></div>
+        <p class="what">Un sector donde se exhibe el uniforme de antes junto al uniforme actual.</p>
+        <div class="lbl">Cómo armarlo</div>
+        <ul>
+          <li>2 maniquíes o percheros de pie con el uniforme completo.</li>
+          <li>Pedir prestado el uniforme viejo a egresados de las primeras promos.</li>
+          <li>Carteles “Así éramos” / “Así somos” con el año de cada uno.</li>
+          <li>Sumar objetos: mochila, cartuchera, cuaderno de comunicados.</li>
+        </ul>
+        <p class="tip"><b>Tip:</b> un marco o espejo al lado para la foto “con el uniforme”, y un spot de luz cálida.</p>
+      </div>
+    </div>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">05</div>
+</section>
+
+<!-- 6 · IDEAS 3-4 -->
+<section class="slide">
+  <svg class="sky" data-stars="60" data-seed="6"></svg>
+  <svg class="garland" data-seed="6"></svg>
+  <div class="content">
+    <div class="kicker">Las ideas · 3 y 4</div>
+    <h1>Recuerdos para compartir</h1>
+    <div class="ideas">
+      <div class="idea">
+        <div class="head"><div class="n" data-star><b>3</b></div><h3>Sector Rama</h3></div>
+        <p class="what">Un árbol de ramas donde los egresados cuelgan mensajes con los recuerdos que tienen del cole.</p>
+        <div class="lbl">Cómo armarlo</div>
+        <ul>
+          <li>Ramas secas grandes en un balde o maceta con piedras o arena.</li>
+          <li>Guirnalda de luces enroscada en las ramas.</li>
+          <li>Mesita con etiquetas kraft, hilo de yute y fibras doradas.</li>
+          <li>Consigna: “Mi recuerdo favorito del Maryland es…” + nombre y promo.</li>
+        </ul>
+        <p class="tip"><b>Tip:</b> fotografiar los mensajes al final para un álbum digital, o dejar el árbol en la escuela.</p>
+      </div>
+      <div class="idea">
+        <div class="head"><div class="n" data-star><b>4</b></div><h3>Las 6 aulas con pantallas</h3></div>
+        <p class="what">En cada una de las 6 aulas, una pantalla pasando fotos viejas en loop.</p>
+        <div class="lbl">Cómo armarlo</div>
+        <ul>
+          <li>Repartir las promos: 13 ÷ 6 ≈ 2 por aula (una con 3). Cartel en la puerta: “Aula Promo 20__”.</li>
+          <li>Presentación en loop (Canva o pendrive en la TV) con música suave.</li>
+          <li>Bancos armados como antes y en el pizarrón: “¿Quién se sentaba acá?”.</li>
+          <li>Probar cada pantalla el día anterior.</li>
+        </ul>
+        <p class="tip"><b>Tip:</b> dejar tizas: el pizarrón se convierte en otro muro de mensajes.</p>
+      </div>
+    </div>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">06</div>
+</section>
+
+<!-- 7 · IDEAS 5-6 -->
+<section class="slide">
+  <svg class="sky" data-stars="60" data-seed="7"></svg>
+  <svg class="garland" data-seed="7"></svg>
+  <div class="content">
+    <div class="kicker">Las ideas · 5 y 6</div>
+    <h1>La decoración que ilumina</h1>
+    <div class="ideas">
+      <div class="idea">
+        <div class="head"><div class="n" data-star><b>5</b></div><h3>Pasillo estrellado</h3></div>
+        <p class="what">Un camino de bolsitas de papel con estrellas caladas y luz adentro, desde la entrada hasta el patio.</p>
+        <div class="lbl">Cómo armarlo</div>
+        <ul>
+          <li>Bolsas de papel tipo farolito con estrellas troqueladas.</li>
+          <li>Velas LED adentro (más seguras que las velas reales).</li>
+          <li>Un poco de arena o piedritas en la base para que no se vuelen.</li>
+          <li>Arriba, guirnaldas de luces y estrellas colgantes.</li>
+        </ul>
+        <p class="tip"><b>Tip:</b> carteles con forma de estrella que indiquen cada sector del recorrido.</p>
+      </div>
+      <div class="idea">
+        <div class="head"><div class="n" data-star><b>6</b></div><h3>Centros de mesa</h3></div>
+        <p class="what">Frascos de mermelada con ramitos de flores de tela.</p>
+        <div class="lbl">Cómo armarlo</div>
+        <ul>
+          <li>Frascos reciclados, limpios y sin etiqueta.</li>
+          <li>Yute o arpillera al cuello + cinta azul o roja Maryland.</li>
+          <li>Ramito de flores de tela con pampas o eucalipto.</li>
+          <li>Mini guirnalda LED a pila adentro del frasco.</li>
+        </ul>
+        <p class="tip"><b>Tip:</b> una tarjetita con el año de una promo en cada mesa para que cada promoción se junte.</p>
+      </div>
+    </div>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">07</div>
+</section>
+
+<!-- 8 · IDEAS 7-8 -->
+<section class="slide">
+  <svg class="sky" data-stars="60" data-seed="8"></svg>
+  <svg class="garland" data-seed="8"></svg>
+  <div class="content">
+    <div class="kicker">Las ideas · 7 y 8</div>
+    <h1>Jugar y emocionarse</h1>
+    <div class="ideas">
+      <div class="idea">
+        <div class="head"><div class="n" data-star><b>7</b></div><h3>Memo test de estrellas</h3></div>
+        <p class="what">Un juego de memoria gigante con cartas en forma de estrella: profes, escudo y rincones del cole.</p>
+        <div class="lbl">Cómo armarlo</div>
+        <ul>
+          <li>12 a 16 pares de estrellas de cartón o foam board (20–25 cm).</li>
+          <li>Imágenes: profes, directivos, escudo, bandera, escalera, patio, buffet.</li>
+          <li>Mismo dorso para todas: azul con estrella dorada.</li>
+          <li>Juegan por promoción con cronómetro: gana la más rápida.</li>
+        </ul>
+        <p class="tip"><b>Tip:</b> quien encuentra el par de un profe cuenta una anécdota con ese profe.</p>
+      </div>
+      <div class="idea">
+        <div class="head"><div class="n" data-star><b>8</b></div><h3>Videos de los que no vienen</h3></div>
+        <p class="what">Quienes no puedan asistir (ex alumnos o profes) mandan un video saludando y contando una anécdota.</p>
+        <div class="lbl">Cómo armarlo</div>
+        <ul>
+          <li>Consigna: video horizontal, máximo 1 minuto, nombre + promo + anécdota.</li>
+          <li>Recibirlos por WhatsApp o carpeta de Drive hasta el 6/11.</li>
+          <li>Editar un solo video de 8 a 10 minutos (CapCut o Canva).</li>
+          <li>Proyectarlo en un momento central de la noche.</li>
+        </ul>
+        <p class="tip"><b>Tip:</b> invitar especialmente a profes jubilados: suele ser el momento más emotivo.</p>
+      </div>
+    </div>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">08</div>
+</section>
+
+<!-- 9 · NUEVAS IDEAS 1 -->
+<section class="slide">
+  <svg class="sky" data-stars="60" data-seed="9"></svg>
+  <svg class="garland" data-seed="9"></svg>
+  <div class="content">
+    <div class="kicker">Más ideas de interacción · 1/2</div>
+    <h1>Para romper el hielo</h1>
+    <div class="grid6">
+      <div class="mini"><div class="icon">📋</div><h3>La toma de lista</h3><p>Un profe o preceptor pasa lista por promoción y cada egresado responde “¡Presente!”. Ideal para abrir la noche.</p><div class="when">Bienvenida</div></div>
+      <div class="mini"><div class="icon">🔔</div><h3>El timbre del cole</h3><p>Usar el timbre real para marcar cada momento: comida, video, juegos, brindis y cierre.</p><div class="when">Toda la noche</div></div>
+      <div class="mini"><div class="icon">⭐</div><h3>Estrella de color por promo</h3><p>En la acreditación cada uno recibe un sticker o pulsera con el color de su promo: así se reconocen al instante.</p><div class="when">Recepción</div></div>
+      <div class="mini"><div class="icon">🎯</div><h3>Bingo humano</h3><p>Tarjeta con consignas: “Encontrá a alguien que… se llevó una materia / es profe / vive en otro país”. Mezcla promociones.</p><div class="when">En las mesas</div></div>
+      <div class="mini"><div class="icon">🗺️</div><h3>¿Dónde estás hoy?</h3><p>Un mapa grande donde cada egresado pega una estrellita en la ciudad o país donde vive hoy.</p><div class="when">Recorrido libre</div></div>
+      <div class="mini"><div class="icon">📸</div><h3>Photo booth “Promo __”</h3><p>Marco gigante con el año a completar y props: birrete, pizarrita, cuaderno, carteles “Me llevé Matemática”.</p><div class="when">Recorrido libre</div></div>
+    </div>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">09</div>
+</section>
+
+<!-- 10 · NUEVAS IDEAS 2 -->
+<section class="slide">
+  <svg class="sky" data-stars="60" data-seed="10"></svg>
+  <svg class="garland" data-seed="10"></svg>
+  <div class="content">
+    <div class="kicker">Más ideas de interacción · 2/2</div>
+    <h1>Para el corazón de la fiesta</h1>
+    <div class="grid6">
+      <div class="mini"><div class="icon">❓</div><h3>Trivia de promociones</h3><p>Preguntas sobre el cole con Kahoot desde el celular (o cartelitos A/B/C). Compiten las promociones entre sí.</p><div class="when">Juegos</div></div>
+      <div class="mini"><div class="icon">🍹</div><h3>Tragos con nombres del cole</h3><p>Carta temática en la barra: “El Recreo”, “Hora Libre”, “La Amonestación”, “Izamiento”.</p><div class="when">Barra</div></div>
+      <div class="mini"><div class="icon">🎶</div><h3>Playlist por promoción</h3><p>Cada promo elige 3 canciones de su época y la música va recorriendo los años de egreso.</p><div class="when">Música</div></div>
+      <div class="mini"><div class="icon">🪜</div><h3>Foto en la escalera</h3><p>Foto oficial de cada promoción en la escalera de la entrada y, al final, una foto con todas las promos juntas.</p><div class="when">Momento central</div></div>
+      <div class="mini"><div class="icon">🏅</div><h3>Menciones divertidas</h3><p>“El que menos cambió”, “Vino de más lejos”, “Promo más numerosa”. Diplomas o medallas simbólicas.</p><div class="when">Brindis</div></div>
+      <div class="mini"><div class="icon">💌</div><h3>Cápsula del tiempo</h3><p>Cada uno escribe una carta a su “yo del próximo reencuentro”. Se guarda en la escuela y se abre en el siguiente.</p><div class="when">Cierre</div></div>
+    </div>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">10</div>
+</section>
+
+<!-- 11 · CRONOGRAMA -->
+<section class="slide">
+  <svg class="sky" data-stars="60" data-seed="11"></svg>
+  <svg class="garland" data-seed="11"></svg>
+  <div class="content">
+    <div class="kicker">Viernes 13 de noviembre</div>
+    <h1>Cronograma de la noche</h1>
+    <div class="timeline">
+      <div>
+        <div class="tl"><div class="h">14:00</div><div class="dot">✦</div><div><b>Montaje</b><span>Luces, pasillo, muro de fotos, árbol, uniformes, mesas y prueba de pantallas y sonido.</span></div></div>
+        <div class="tl"><div class="h">18:30</div><div class="dot">✦</div><div><b>Último chequeo</b><span>Encender luces y velas LED, pantallas en loop, música ambiente.</span></div></div>
+        <div class="tl key"><div class="h">19:00</div><div class="dot">★</div><div><b>Recepción por el pasillo estrellado</b><span>Acreditación, estrella de color por promo y trago de bienvenida.</span></div></div>
+        <div class="tl"><div class="h">19:15</div><div class="dot">✦</div><div><b>Recorrido libre</b><span>Aulas con pantallas, Fotos Memories, Antes y hoy, Sector Rama, photo booth y mapa.</span></div></div>
+        <div class="tl key"><div class="h">20:15</div><div class="dot">★</div><div><b>¡Suena el timbre! Bienvenida</b><span>Palabras de directivos y “toma de lista” por promoción.</span></div></div>
+        <div class="tl"><div class="h">20:40</div><div class="dot">✦</div><div><b>Pizzas y bebidas</b><span>Catering en las mesas por promo. Bingo humano.</span></div></div>
+      </div>
+      <div>
+        <div class="tl key"><div class="h">21:30</div><div class="dot">★</div><div><b>Videos de saludos</b><span>Proyección de los mensajes de quienes no pudieron venir.</span></div></div>
+        <div class="tl"><div class="h">21:50</div><div class="dot">✦</div><div><b>Juegos entre promociones</b><span>Memo test de estrellas y trivia.</span></div></div>
+        <div class="tl"><div class="h">22:30</div><div class="dot">✦</div><div><b>Foto en la escalera</b><span>Una foto por promoción y la gran foto de todas las promos.</span></div></div>
+        <div class="tl key"><div class="h">23:00</div><div class="dot">★</div><div><b>Brindis y barra de tragos</b><span>Tragos temáticos, menciones divertidas y playlist por promos.</span></div></div>
+        <div class="tl"><div class="h">23:45</div><div class="dot">✦</div><div><b>Cápsula del tiempo</b><span>Se guardan las cartas. Último timbre de la noche.</span></div></div>
+        <div class="tl"><div class="h">00:00</div><div class="dot">✦</div><div><b>Cierre y desarme</b><span>Guardar fotos y mensajes del árbol, apagar y ordenar.</span></div></div>
+      </div>
+    </div>
+    <p class="note">Horarios orientativos: ajustar según la cantidad de confirmados y los tiempos del catering.</p>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">11</div>
+</section>
+
+<!-- 12 · PREPARATIVOS -->
+<section class="slide">
+  <svg class="sky" data-stars="60" data-seed="12"></svg>
+  <svg class="garland" data-seed="12"></svg>
+  <div class="content">
+    <div class="kicker">Cuenta regresiva</div>
+    <h1>Preparativos hasta el 13/11</h1>
+    <div class="weeks">
+      <div class="week"><div class="d">19 – 25/10</div><div class="t">Organizar</div><ul>
+        <li>Cerrar confirmaciones (23/10)</li><li>Armar comisiones y un referente por promo</li><li>Lanzar pedido de fotos y videos</li><li>Definir aulas por promo</li></ul></div>
+      <div class="week"><div class="d">26/10 – 1/11</div><div class="t">Comprar y armar</div><ul>
+        <li>Cerrar catering con cantidades</li><li>Comprar materiales (ver lista)</li><li>Calar bolsitas estrelladas</li><li>Conseguir uniformes y maniquíes</li><li>Armar estrellas del memo test</li></ul></div>
+      <div class="week"><div class="d">2 – 8/11</div><div class="t">Contenidos</div><ul>
+        <li>Cierre de fotos (2/11) e impresión</li><li>Presentaciones de las 6 aulas</li><li>Cierre de videos (6/11) y edición</li><li>Centros de mesa y etiquetas</li><li>Trivia, playlist y carta de tragos</li></ul></div>
+      <div class="week"><div class="d">9 – 12/11</div><div class="t">Probar</div><ul>
+        <li>Prueba técnica de pantallas y sonido</li><li>Repasar el cronograma con el equipo</li><li>Imprimir carteles, bingo y mapa</li><li>Armar árbol y muro de fotos si se puede</li></ul></div>
+      <div class="week final"><div class="d">13/11</div><div class="t">¡Es hoy!</div><ul>
+        <li>Montaje desde las 14 h</li><li>Chequeo a las 18:30</li><li>19 h: abrir puertas</li><li>Disfrutar ✨</li></ul></div>
+    </div>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">12</div>
+</section>
+
+<!-- 13 · MATERIALES 1 -->
+<section class="slide">
+  <svg class="sky" data-stars="50" data-seed="13"></svg>
+  <svg class="garland" data-seed="13"></svg>
+  <div class="content">
+    <div class="kicker">Lista de materiales · 1/2</div>
+    <h1>Luces, pantallas y telas</h1>
+    <div class="mat">
+      <div class="card"><h3>Iluminación</h3><table>
+        <tr><td>Guirnaldas de luz cálida (10 m)</td><td class="q">12–15</td></tr>
+        <tr><td>Cortinas de luces LED (fondos)</td><td class="q">2–3</td></tr>
+        <tr><td>Estrellas colgantes luminosas</td><td class="q">15–20</td></tr>
+        <tr><td>Velas LED a pila</td><td class="q">50–60</td></tr>
+        <tr><td>Mini guirnaldas LED a pila (frascos)</td><td class="q">20–25</td></tr>
+        <tr><td>Pilas de repuesto</td><td class="q">1 caja</td></tr>
+        <tr><td>Alargues y zapatillas</td><td class="q">8–10</td></tr>
+        <tr><td>Spot de luz cálida (uniformes)</td><td class="q">1–2</td></tr>
+      </table></div>
+      <div class="card"><h3>Pantallas y sonido</h3><table>
+        <tr><td>TV o proyector por aula</td><td class="q">6</td></tr>
+        <tr><td>Pantalla o proyector principal (video)</td><td class="q">1</td></tr>
+        <tr><td>Pendrives o notebooks</td><td class="q">7</td></tr>
+        <tr><td>Cables HDMI y adaptadores</td><td class="q">7+</td></tr>
+        <tr><td>Equipo de sonido + micrófono</td><td class="q">1</td></tr>
+        <tr><td>Parlantes chicos para aulas</td><td class="q">opcional</td></tr>
+        <tr><td>Celular o tablet para la trivia + QR impreso</td><td class="q">1</td></tr>
+        <tr><td>Timbre del cole o campana</td><td class="q">1</td></tr>
+      </table></div>
+      <div class="card"><h3>Telas y decoración</h3><table>
+        <tr><td>Tela azul noche o negra (fondos)</td><td class="q">~20 m</td></tr>
+        <tr><td>Tul o voile blanco / dorado</td><td class="q">~15 m</td></tr>
+        <tr><td>Arpillera o yute</td><td class="q">~5 m</td></tr>
+        <tr><td>Manteles azules o blancos</td><td class="q">1 x mesa</td></tr>
+        <tr><td>Ramas secas grandes + balde y piedras</td><td class="q">1 árbol</td></tr>
+        <tr><td>Maniquíes o percheros de pie</td><td class="q">2</td></tr>
+        <tr><td>Espejo de pie o marco grande</td><td class="q">1</td></tr>
+        <tr><td>Pampas y eucalipto para rincones</td><td class="q">a gusto</td></tr>
+      </table></div>
+    </div>
+    <p class="note">Cantidades orientativas para unas 150 personas y 20 mesas: ajustar con la lista de confirmados.</p>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">13</div>
+</section>
+
+<!-- 14 · MATERIALES 2 -->
+<section class="slide">
+  <svg class="sky" data-stars="50" data-seed="14"></svg>
+  <svg class="garland" data-seed="14"></svg>
+  <div class="content">
+    <div class="kicker">Lista de materiales · 2/2</div>
+    <h1>Manualidades, mesas y juegos</h1>
+    <div class="mat">
+      <div class="card"><h3>Papelería y manualidades</h3><table>
+        <tr><td>Bolsas de papel tipo farolito</td><td class="q">50–60</td></tr>
+        <tr><td>Troquel de estrella o cutter + plantilla</td><td class="q">2</td></tr>
+        <tr><td>Fotos impresas tipo polaroid</td><td class="q">200+</td></tr>
+        <tr><td>Broches de madera</td><td class="q">300</td></tr>
+        <tr><td>Etiquetas kraft para el árbol</td><td class="q">300</td></tr>
+        <tr><td>Hilo de yute o sisal</td><td class="q">5 rollos</td></tr>
+        <tr><td>Biromes, fibras doradas y marcadores</td><td class="q">30</td></tr>
+        <tr><td>Cartulina y goma eva dorada</td><td class="q">20 pliegos</td></tr>
+        <tr><td>Silicona, doble faz y cinta de papel</td><td class="q">varios</td></tr>
+      </table></div>
+      <div class="card"><h3>Mesas</h3><table>
+        <tr><td>Frascos de mermelada</td><td class="q">20–25</td></tr>
+        <tr><td>Ramitos de flores de tela</td><td class="q">20–25</td></tr>
+        <tr><td>Cinta azul y roja Maryland</td><td class="q">3 rollos</td></tr>
+        <tr><td>Tarjetitas con año de promo</td><td class="q">1 x mesa</td></tr>
+        <tr><td>Arena o piedritas decorativas</td><td class="q">2 kg</td></tr>
+        <tr><td>Servilletas, vasos y hielo</td><td class="q">con catering</td></tr>
+        <tr><td>Conservadoras</td><td class="q">3–4</td></tr>
+        <tr><td>Carta de tragos impresa</td><td class="q">2–3</td></tr>
+      </table></div>
+      <div class="card"><h3>Juegos y logística</h3><table>
+        <tr><td>Estrellas de foam board (memo test)</td><td class="q">24–32</td></tr>
+        <tr><td>Stickers o pulseras de color por promo</td><td class="q">13 colores</td></tr>
+        <tr><td>Marco gigante y props photo booth</td><td class="q">1 set</td></tr>
+        <tr><td>Mapa grande + estrellitas adhesivas</td><td class="q">1</td></tr>
+        <tr><td>Tarjetas de bingo humano</td><td class="q">1 x persona</td></tr>
+        <tr><td>Caja cápsula del tiempo + sobres</td><td class="q">1</td></tr>
+        <tr><td>Diplomas o medallas simbólicas</td><td class="q">10</td></tr>
+        <tr><td>Escalera, precintos, ganchos y tanza</td><td class="q">varios</td></tr>
+        <tr><td>Listado de acreditación y botiquín</td><td class="q">1</td></tr>
+      </table></div>
+    </div>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">14</div>
+</section>
+
+<!-- 15 · COMISIONES -->
+<section class="slide">
+  <svg class="sky" data-stars="60" data-seed="15"></svg>
+  <svg class="garland" data-seed="15"></svg>
+  <div class="content">
+    <div class="kicker">Equipo de trabajo</div>
+    <h1>Comisiones sugeridas</h1>
+    <p class="lead">Repartir tareas hace que nadie se pierda la fiesta. Sumar además un referente por cada una de las 13 promociones para juntar fotos, videos y confirmaciones.</p>
+    <div class="teams">
+      <div class="card"><h3>Decoración y luces</h3><ul><li>Pasillo estrellado</li><li>Muro de fotos y árbol</li><li>Centros de mesa</li><li>Sector uniformes</li></ul></div>
+      <div class="card"><h3>Contenidos y técnica</h3><ul><li>Fotos y presentaciones de aulas</li><li>Video de saludos</li><li>Pantallas, sonido y playlist</li></ul></div>
+      <div class="card"><h3>Juegos y animación</h3><ul><li>Toma de lista y timbre</li><li>Memo test, trivia y bingo</li><li>Menciones y cápsula del tiempo</li></ul></div>
+      <div class="card"><h3>Catering y barra</h3><ul><li>Pizzas y bebidas</li><li>Tragos temáticos</li><li>Hielo, vasos y vajilla</li></ul></div>
+      <div class="card"><h3>Recepción y difusión</h3><ul><li>Confirmaciones y listado</li><li>Acreditación y stickers</li><li>Redes y fotos de la noche</li></ul></div>
+      <div class="card"><h3>Referentes por promo</h3><ul><li>13 personas, una por promo</li><li>Juntan fotos y videos</li><li>Coordinan la foto en la escalera</li></ul></div>
+    </div>
+  </div>
+  <div class="brand">Reencuentro Maryland</div><div class="num">15</div>
+</section>
+
+<!-- 16 · CIERRE -->
+<section class="slide end">
+  <svg class="sky" data-stars="120" data-seed="16"></svg>
+  <svg class="garland" data-seed="16"></svg>
+  <div class="content">
+    <div class="kicker">Reencuentro de Egresados Maryland</div>
+    <div class="script" style="margin-top:30px">Caminos distintos,</div>
+    <h1>la misma raíz</h1>
+    <p class="lead" style="margin-top:36px">Te esperamos para volver un rato más al cole · Viernes 13/11 · 19:00 h</p>
+  </div>
+</section>
+
+<script>
+  // Generador pseudoaleatorio con semilla: el mismo cielo en cada render
+  function rng(seed) { let s = seed * 9301 + 49297; return () => (s = (s * 9301 + 49297) % 233280) / 233280; }
+  const NS = "http://www.w3.org/2000/svg";
+  function starPath(cx, cy, R, r) {
+    let d = "";
+    for (let i = 0; i < 10; i++) {
+      const a = -Math.PI / 2 + i * Math.PI / 5, rad = i % 2 ? r : R;
+      d += (i ? "L" : "M") + (cx + rad * Math.cos(a)).toFixed(1) + " " + (cy + rad * Math.sin(a)).toFixed(1) + " ";
+    }
+    return d + "Z";
+  }
+  function el(tag, attrs) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; }
+
+  // Cielo: puntitos y algunas estrellas de cinco puntas
+  document.querySelectorAll("svg.sky").forEach(svg => {
+    const rand = rng(+svg.dataset.seed), n = +svg.dataset.stars, minX = +(svg.dataset.left || 0);
+    svg.setAttribute("viewBox", "0 0 1920 1080");
+    for (let i = 0; i < n; i++) {
+      const x = (minX + rand() * (1 - minX)) * 1920, y = rand() * 1080, s = rand();
+      if (s > 0.9) svg.appendChild(el("path", { d: starPath(x, y, 9, 3.6), fill: "#f6dfae", opacity: 0.75 }));
+      else svg.appendChild(el("circle", { cx: x.toFixed(1), cy: y.toFixed(1), r: (0.8 + s * 2).toFixed(1), fill: "#fff7e6", opacity: (0.25 + s * 0.5).toFixed(2) }));
+    }
+  });
+
+  // Guirnalda de luces colgando arriba de cada slide
+  document.querySelectorAll("svg.garland").forEach(svg => {
+    const rand = rng(+svg.dataset.seed + 50);
+    svg.setAttribute("viewBox", "0 0 1920 140");
+    const sag = 34 + rand() * 18, pts = [];
+    let d = "M -20 18";
+    const spans = 4, w = 1960 / spans;
+    for (let k = 0; k < spans; k++) {
+      const x0 = -20 + k * w, x1 = x0 + w;
+      d += ` Q ${x0 + w / 2} ${18 + sag * 2} ${x1} 18`;
+      for (let t = 0.08; t < 1; t += 0.12) {
+        const x = (1 - t) * (1 - t) * x0 + 2 * (1 - t) * t * (x0 + w / 2) + t * t * x1;
+        const y = (1 - t) * (1 - t) * 18 + 2 * (1 - t) * t * (18 + sag * 2) + t * t * 18;
+        pts.push([x, y]);
+      }
+    }
+    svg.appendChild(el("path", { d, fill: "none", stroke: "#5b5340", "stroke-width": 2 }));
+    pts.forEach(([x, y]) => {
+      svg.appendChild(el("circle", { cx: x.toFixed(1), cy: (y + 8).toFixed(1), r: 13, fill: "#e9c47c", opacity: 0.18 }));
+      svg.appendChild(el("circle", { cx: x.toFixed(1), cy: (y + 8).toFixed(1), r: 5.5, fill: "#ffe6a8" }));
+    });
+  });
+
+  // Insignias con forma de estrella dorada
+  document.querySelectorAll("[data-star]").forEach(box => {
+    const svg = el("svg", { viewBox: "0 0 100 100", width: "100%", height: "100%" });
+    svg.appendChild(el("path", { d: starPath(50, 54, 50, 26), fill: "#e9c47c" }));
+    box.prepend(svg);
+  });
+</script>
+</body>
+</html>
